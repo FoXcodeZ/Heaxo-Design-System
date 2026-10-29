@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Scene tree rows" subtitle="Hierarchy with selection states" viewport="700x230" -->
+<html><head><meta charset="utf-8"><title>Scene tree rows</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.tree { font-family: var(--font-sans); font-size: 12px; }
+.tree-row { display:flex; align-items:center; gap:6px; padding: 3px 8px; border-radius: 3px; color: var(--fg-1); }
+.tree-row.selected { background: var(--plum-500); color:#fff; }
+.tree-row.hover { background: rgba(255,255,255,0.04); }
+.tree-row [data-lucide]{ width:13px; height:13px; opacity:0.7; flex:none; }
+.tree-row .chev { width:12px; height:12px; opacity:0.5; }
+.tree-row .name { flex:1; }
+.tree-row .badge { font-family: var(--font-mono); font-size:9px; color: var(--fg-3); letter-spacing:0.05em; }
+.tree-row.selected .badge { color: rgba(255,255,255,0.7); }
+</style>
+<div class="card">
+  <div class="tree">
+    <div class="tree-row"><i data-lucide="chevron-down" class="chev"></i><i data-lucide="box" style="color:#d472a4;"></i><span class="name">World</span><span class="badge">SCENE</span></div>
+    <div class="tree-row" style="padding-left:24px;"><i data-lucide="chevron-down" class="chev"></i><i data-lucide="layers"></i><span class="name">Environment</span></div>
+    <div class="tree-row selected" style="padding-left:42px;"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="mountain"></i><span class="name">Terrain_01</span><span class="badge">MESH</span></div>
+    <div class="tree-row hover" style="padding-left:42px;"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="sun"></i><span class="name">DirectionalLight</span><span class="badge">LIGHT</span></div>
+    <div class="tree-row" style="padding-left:24px;"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="user"></i><span class="name">Player</span></div>
+    <div class="tree-row" style="padding-left:24px;"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="video"></i><span class="name">MainCamera</span></div>
+  </div>
+</div></body></html>

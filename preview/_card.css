@@ -1,0 +1,5 @@
+/* Shared styling for preview cards. */
+@import url('../colors_and_type.css');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; background: var(--bg-0); color: var(--fg-1); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+.card { width: 700px; padding: 20px 24px; background: var(--bg-1); border: 1px solid var(--stroke-2); display: flex; flex-direction: column; gap: 14px; }

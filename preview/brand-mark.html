@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Brand mark</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg-0);color:var(--fg-1);font-family:var(--font-sans);}
+  .card{padding:20px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;height:160px;box-sizing:border-box;}
+  .marks{display:flex;gap:14px;align-items:center;}
+  .tile{width:96px;height:96px;border-radius:14px;background:var(--bg-3);display:grid;place-items:center;border:1px solid var(--stroke-2);}
+  .tile img{width:64px;height:64px;}
+  .tile.alt{background:var(--bg-1);}
+  .tile.tiny{width:48px;height:48px;border-radius:10px;}
+  .tile.tiny img{width:32px;height:32px;}
+  .info .eyebrow{margin-bottom:6px;}
+  .info h2{font-family:var(--font-display);font-weight:700;font-size:34px;letter-spacing:-0.04em;margin:0;}
+  .info p{margin:6px 0 0;font-size:13px;color:var(--fg-3);line-height:1.5;}
+</style></head>
+<body>
+  <div class="card">
+    <div class="marks">
+      <div class="tile"><img src="../assets/heaxo-logo.svg" alt=""></div>
+      <div class="tile alt"><img src="../assets/heaxo-icon-rounded.png" alt=""></div>
+      <div class="tile tiny"><img src="../assets/heaxo-logo.svg" alt=""></div>
+    </div>
+    <div class="info">
+      <div class="eyebrow">The mark</div>
+      <h2>Heaxo</h2>
+      <p>Triangle + 3 vertex nodes — reads as polygon, vertex graph, tetrahedron. Plum on navy. Never recolored.</p>
+    </div>
+  </div>
+</body></html>

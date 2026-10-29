@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — Editor" name="Editor UI kit" subtitle="Full editor: top bar, scene tree, viewport, inspector, console" viewport="1440x900" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Heaxo Editor — UI Kit</title>
+<link rel="icon" href="../../assets/favicon.ico">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  html, body { height: 100%; margin: 0; background: #16171f; overflow: hidden; }
+  body { font-family: 'Inter Tight', sans-serif; color: #ecedf3; }
+  #root { height: 100vh; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+<script type="text/babel" src="Primitives.jsx"></script>
+<script type="text/babel" src="EditorTopBar.jsx"></script>
+<script type="text/babel" src="SceneTree.jsx"></script>
+<script type="text/babel" src="AssetBrowser.jsx"></script>
+<script type="text/babel" src="Viewport.jsx"></script>
+<script type="text/babel" src="Inspector.jsx"></script>
+<script type="text/babel" src="Console.jsx"></script>
+<script type="text/babel" src="CommandPalette.jsx"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+function EditorApp() {
+  const [selected, setSelected] = useState('Terrain_01');
+  const [playing, setPlaying] = useState(false);
+  const [consoleOpen, setConsoleOpen] = useState(true);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+
+  // Refresh icons whenever rendered
+  useEffect(() => { lucide.createIcons(); });
+
+  // ⌘K to open palette
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setPaletteOpen(p => !p);
+      } else if (e.key === 'Escape') {
+        setPaletteOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  return (
+    <div data-screen-label="Editor" style={{display:'flex', flexDirection:'column', height:'100vh', position:'relative', background:'#16171f'}}>
+      <EditorTopBar
+        sceneName="World.scene"
+        dirty={true}
+        playing={playing}
+        onTogglePlay={() => setPlaying(p => !p)}
+        onCommandPalette={() => setPaletteOpen(true)}
+      />
+      <div style={{flex:1, display:'flex', minHeight:0}}>
+        {/* Left rail */}
+        <div style={{width:260, display:'flex', flexDirection:'column', borderRight:'1px solid rgba(255,255,255,0.08)'}}>
+          <div style={{flex:1, minHeight:0}}>
+            <SceneTree selected={selected} onSelect={setSelected}/>
+          </div>
+          <div style={{height:220, flex:'none'}}>
+            <AssetBrowser/>
+          </div>
+        </div>
+        {/* Center viewport */}
+        <Viewport playing={playing}/>
+        {/* Right rail */}
+        <div style={{width:300, flex:'none'}}>
+          <Inspector name={selected}/>
+        </div>
+      </div>
+      <Console open={consoleOpen} onToggle={() => setConsoleOpen(o => !o)}/>
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)}/>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<EditorApp/>);
+</script>
+</body>
+</html>

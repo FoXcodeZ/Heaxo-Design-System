@@ -1,0 +1,17 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Feature cards" subtitle="Marketing feature card" viewport="700x190" -->
+<html><head><meta charset="utf-8"><title>Card surfaces</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.feat-card { background: var(--bg-1); border: 1px solid var(--stroke-2); border-radius: 10px; padding: 16px 18px; flex:1; box-shadow: 0 1px 0 rgba(0,0,0,0.4);}
+.feat-card .ico { width:36px; height:36px; border-radius: 8px; background: rgba(165,50,115,0.15); border:1px solid rgba(165,50,115,0.35); color:#d472a4; display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px;}
+.feat-card .ico [data-lucide]{ width:18px; height:18px; }
+.feat-card h4 { font-family: var(--font-sans); font-weight:600; font-size:15px; color: var(--fg-0); margin-bottom: 4px; }
+.feat-card p { font-family: var(--font-sans); font-size:12px; line-height:1.5; color: var(--fg-2); margin:0; }
+</style>
+<div class="card" style="flex-direction:row; gap:12px;">
+  <div class="feat-card"><div class="ico"><i data-lucide="cpu"></i></div><h4>Native renderer</h4><p>Vulkan + Metal backends with deferred lighting and clustered shading.</p></div>
+  <div class="feat-card"><div class="ico"><i data-lucide="terminal"></i></div><h4>Hot reload</h4><p>Edit shaders and scripts; the viewport updates without rebuilding.</p></div>
+  <div class="feat-card"><div class="ico"><i data-lucide="package"></i></div><h4>Build pipeline</h4><p>Ship to Win, Mac, Linux, and console targets from one project.</p></div>
+</div></body></html>

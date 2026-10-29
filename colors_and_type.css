@@ -1,0 +1,276 @@
+/* =========================================================================
+   Heaxo Design System — Foundations
+   Colors + Type for a 3D game engine + editor.
+   ========================================================================= */
+
+/* ------------------------------------------------------------------ Fonts */
+/* Primary UI/display: Inter Tight — clean, geometric, modern.
+   Mono (editor, code, telemetry): JetBrains Mono — engine/IDE staple.
+   Display alternative for big marketing moments: Space Grotesk. */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  /* ============================================================ Colors */
+
+  /* — Brand core (extracted directly from the Heaxo mark) */
+  --heaxo-navy:        #2b2d42;  /* logo background */
+  --heaxo-plum:        #a53273;  /* logo mark, primary accent */
+  --heaxo-plum-deep:   #70305e;  /* shadow tone in mark */
+  --heaxo-plum-darker: #502f50;  /* deepest plum, near-navy */
+
+  /* — Surface scale (cool dark, slightly violet — from navy hue) */
+  --bg-0:  #16171f;   /* deepest — viewport background */
+  --bg-1:  #1c1d28;   /* panels */
+  --bg-2:  #232531;   /* secondary panels, sidebars */
+  --bg-3:  #2b2d42;   /* brand navy, hero / focused panel */
+  --bg-4:  #353749;   /* raised cards, hover */
+  --bg-5:  #424458;   /* selected, pressed, dividers-on-light-bg */
+
+  /* — Foreground scale */
+  --fg-0:  #ffffff;   /* pure, headings on dark */
+  --fg-1:  #ecedf3;   /* default body on dark */
+  --fg-2:  #b8b9c6;   /* secondary text, labels */
+  --fg-3:  #82839a;   /* tertiary, captions, placeholders */
+  --fg-4:  #555670;   /* disabled, hint */
+
+  /* — Borders & strokes (semi-transparent so they layer cleanly) */
+  --stroke-1: rgba(255,255,255,0.06);  /* hairline */
+  --stroke-2: rgba(255,255,255,0.10);  /* default */
+  --stroke-3: rgba(255,255,255,0.18);  /* emphasis */
+  --stroke-focus: var(--heaxo-plum);
+
+  /* — Brand accent ramp (plum) */
+  --plum-50:  #fbecf4;
+  --plum-100: #f4cee2;
+  --plum-200: #e7a3c5;
+  --plum-300: #d472a4;
+  --plum-400: #be4f88;
+  --plum-500: #a53273;   /* brand */
+  --plum-600: #862760;
+  --plum-700: #6a2150;
+  --plum-800: #4f1c40;
+  --plum-900: #361531;
+
+  /* — Functional palette (tuned to coexist with plum + navy) */
+  --success-500: #4ec9b0;   /* cyan-teal — common in IDEs, complements plum */
+  --success-600: #2fa593;
+  --warning-500: #e8b339;   /* amber — gizmo Y-axis */
+  --warning-600: #c8932a;
+  --danger-500:  #e0566c;   /* coral-red — gizmo X-axis, errors */
+  --danger-600:  #c43e54;
+  --info-500:    #5aa9ff;   /* sky — gizmo Z-axis, links */
+  --info-600:    #3a86d6;
+
+  /* — Gizmo axis colors (canonical for 3D editors) */
+  --axis-x: #e0566c;
+  --axis-y: #b6e34d;
+  --axis-z: #5aa9ff;
+
+  /* — Semantic aliases */
+  --color-bg:           var(--bg-0);
+  --color-surface:      var(--bg-1);
+  --color-surface-alt:  var(--bg-2);
+  --color-text:         var(--fg-1);
+  --color-text-muted:   var(--fg-2);
+  --color-text-faint:   var(--fg-3);
+  --color-primary:      var(--heaxo-plum);
+  --color-primary-hov:  #b54284;
+  --color-primary-press:#8c2961;
+  --color-link:         var(--info-500);
+  --color-border:       var(--stroke-2);
+
+  /* ============================================================ Type */
+
+  /* — Font stacks */
+  --font-sans:    'Inter Tight', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* — Scale (modular ~1.2 for UI, 1.25–1.333 for display) */
+  --text-2xs: 10px;   /* axis labels, telemetry mini */
+  --text-xs:  11px;   /* compact UI labels */
+  --text-sm:  12px;   /* dense IDE chrome — primary editor UI text */
+  --text-base:14px;   /* default body */
+  --text-md:  16px;   /* readable body, marketing default */
+  --text-lg:  18px;
+  --text-xl:  22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+  --text-6xl: 88px;   /* hero only */
+
+  /* — Weights */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-semi:    600; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+  --fw-black:   800; /* @kind font */
+
+  /* — Line heights */
+  --lh-tight:   1.05; /* @kind font */   /* hero, big display */
+  --lh-snug:    1.15; /* @kind font */
+  --lh-normal:  1.4; /* @kind font */
+  --lh-relaxed: 1.6; /* @kind font */
+  --lh-mono:    1.5; /* @kind font */
+
+  /* — Tracking (Inter Tight wants slight negative on display) */
+  --track-tighter: -0.04em; /* @kind font */
+  --track-tight:   -0.02em; /* @kind font */
+  --track-normal:  0; /* @kind font */
+  --track-wide:    0.02em; /* @kind font */
+  --track-caps:    0.08em; /* @kind font */   /* eyebrow / overline */
+
+  /* ============================================================ Layout */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;     /* default button / input */
+  --radius-lg: 10px;    /* cards */
+  --radius-xl: 14px;
+  --radius-2xl: 20px;
+  --radius-pill: 999px;
+
+  /* Spacing — 4px base */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Shadows (dark-mode-tuned: deeper, low opacity) */
+  --shadow-xs: 0 1px 0 rgba(0,0,0,0.4);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05) inset;
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06) inset;
+  --shadow-glow-plum: 0 0 0 1px rgba(165,50,115,0.4), 0 0 24px rgba(165,50,115,0.35);
+  --shadow-inner:    inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.4);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --dur-fast:    120ms; /* @kind other */
+  --dur-base:    180ms; /* @kind other */
+  --dur-slow:    320ms; /* @kind other */
+}
+
+/* ===================================================================
+   Semantic typography classes — apply to elements directly
+   =================================================================== */
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-6xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tighter);
+  color: var(--fg-0);
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight);
+  color: var(--fg-0);
+}
+
+.h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-3xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-tight);
+  color: var(--fg-0);
+}
+
+.h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semi);
+  font-size: var(--text-2xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-tight);
+  color: var(--fg-0);
+}
+
+.h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semi);
+  font-size: var(--text-xl);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+.h5 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semi);
+  font-size: var(--text-lg);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+}
+
+.body, p {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-1);
+}
+
+.body-sm {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semi);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  color: var(--plum-300);
+}
+
+.ui-label {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-sm);
+  line-height: var(--lh-normal);
+  letter-spacing: 0;
+  color: var(--fg-2);
+}
+
+.code, code, pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  line-height: var(--lh-mono);
+  color: var(--fg-1);
+}
+
+/* Compact telemetry — used in editor HUD overlays */
+.telemetry {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--track-wide);
+  color: var(--fg-2);
+  text-transform: uppercase;
+}

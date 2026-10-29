@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Inputs & vec3 fields" subtitle="Text inputs and axis-colored numerics" viewport="700x190" -->
+<html><head><meta charset="utf-8"><title>Inputs & numeric fields</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.field { background: var(--bg-2); border:1px solid var(--stroke-2); border-radius: 6px; padding: 7px 10px; color: var(--fg-1); font-family: var(--font-sans); font-size: 13px; width: 180px; }
+.field:focus { outline:none; border-color: var(--plum-500); box-shadow: 0 0 0 2px rgba(165,50,115,0.18); }
+.numeric { display:inline-flex; align-items:center; background: var(--bg-2); border:1px solid var(--stroke-2); border-radius:6px; overflow:hidden; }
+.numeric-label { font-family: var(--font-mono); font-size:11px; color: #e0566c; padding: 7px 10px; background: rgba(224,86,108,0.1); border-right: 1px solid var(--stroke-2); font-weight: 700;}
+.numeric-label.y { color:#b6e34d; background: rgba(182,227,77,0.1); }
+.numeric-label.z { color:#5aa9ff; background: rgba(90,169,255,0.1); }
+.numeric input { background: transparent; border: none; outline:none; color: var(--fg-1); font-family: var(--font-mono); font-size:12px; padding: 7px 10px; width: 64px; }
+</style>
+<div class="card">
+  <div style="display:flex; gap:14px; align-items:center;">
+    <input class="field" placeholder="Search assets…">
+    <input class="field" value="Player.scene" style="width:140px;">
+    <span style="font-family:var(--font-mono); font-size:10px; color:var(--fg-3); letter-spacing:0.05em;">TEXT FIELDS</span>
+  </div>
+  <div style="display:flex; gap:8px; align-items:center;">
+    <span style="font-family:var(--font-sans); font-size:12px; color:var(--fg-2); width:64px;">Position</span>
+    <div class="numeric"><span class="numeric-label">X</span><input value="12.480"></div>
+    <div class="numeric"><span class="numeric-label y">Y</span><input value="0.000"></div>
+    <div class="numeric"><span class="numeric-label z">Z</span><input value="-4.250"></div>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:10px; color:var(--fg-3); letter-spacing:0.05em;">VEC3 INPUT · AXIS-COLORED LABELS · MONO NUMERIC</div>
+</div></body></html>

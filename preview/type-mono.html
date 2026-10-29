@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- @dsCard group="Type" name="Mono / code" subtitle="JetBrains Mono with editor tokens" viewport="700x210" -->
+<html><head><meta charset="utf-8"><title>Mono / code</title>
+<link rel="stylesheet" href="_card.css"></head><body>
+<div class="card">
+  <div style="font-family:var(--font-mono); font-size:13px; line-height:1.55; color:var(--fg-1); background:var(--bg-2); padding:14px 16px; border-radius:6px; border:1px solid var(--stroke-1);">
+<span style="color:#82839a;">// game logic — hot-reloads on save</span><br>
+<span style="color:#5aa9ff;">using</span> <span style="color:#4ec9b0;">Heaxo</span>;<br>
+<br>
+<span style="color:#5aa9ff;">public class</span> <span style="color:#4ec9b0;">PlayerController</span> : <span style="color:#4ec9b0;">Script</span> {<br>
+&nbsp;&nbsp;[<span style="color:#d472a4;">Export</span>] <span style="color:#5aa9ff;">public float</span> Speed = <span style="color:#e8b339;">0.12f</span>;<br>
+&nbsp;&nbsp;<span style="color:#5aa9ff;">public override void</span> <span style="color:#d472a4;">OnUpdate</span>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#5aa9ff;">var</span> xf = <span style="color:#d472a4;">Get</span>&lt;<span style="color:#4ec9b0;">Transform</span>&gt;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xf.Translation += <span style="color:#4ec9b0;">Input</span>.Axis * Speed;<br>
+&nbsp;&nbsp;}<br>
+}
+  </div>
+  <div style="display:flex; gap:16px; font-family: var(--font-mono); font-size:10px; color: var(--fg-3); letter-spacing:0.05em;">
+    <span>JETBRAINS MONO</span><span>C# (PRIMARY)</span><span>· C++ ENGINE · NODE GRAPH</span>
+  </div>
+</div></body></html>

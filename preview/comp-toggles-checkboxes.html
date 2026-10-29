@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Toggles & checkboxes" subtitle="Switch + checkbox states" viewport="700x210" -->
+<html><head><meta charset="utf-8"><title>Toggles & checkboxes</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.toggle { width:32px; height:18px; background: var(--bg-3); border:1px solid var(--stroke-2); border-radius:999px; position:relative; display:inline-block; cursor:pointer; }
+.toggle::after { content:''; position:absolute; top:2px; left:2px; width:12px; height:12px; background:var(--fg-2); border-radius:50%; transition: all 120ms;}
+.toggle.on { background: var(--plum-500); border-color: var(--plum-500); }
+.toggle.on::after { background:#fff; left:16px; }
+.checkbox { width:14px; height:14px; border:1px solid var(--stroke-3); border-radius:3px; background:var(--bg-2); display:inline-flex; align-items:center; justify-content:center; }
+.checkbox.on { background: var(--plum-500); border-color: var(--plum-500); color:#fff; }
+.row { display:flex; align-items:center; gap:10px; font-family:var(--font-sans); font-size:13px; color:var(--fg-1); }
+.row .lab { color: var(--fg-2); width:140px; }
+</style>
+<div class="card">
+  <div class="row"><span class="lab">Visible in viewport</span><span class="toggle on"></span><span style="color:var(--fg-3); font-size:12px;">on</span></div>
+  <div class="row"><span class="lab">Cast shadows</span><span class="toggle"></span><span style="color:var(--fg-3); font-size:12px;">off</span></div>
+  <div class="row"><span class="lab">Snap to grid</span><span class="checkbox on"><i data-lucide="check" style="width:10px;height:10px;stroke-width:3.5"></i></span><span style="color:var(--fg-3); font-size:12px;">checked</span></div>
+  <div class="row"><span class="lab">Wireframe overlay</span><span class="checkbox"></span><span style="color:var(--fg-3); font-size:12px;">unchecked</span></div>
+</div></body></html>

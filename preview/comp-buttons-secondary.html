@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Buttons — secondary & ghost" subtitle="Secondary, ghost, danger" viewport="700x150" -->
+<html><head><meta charset="utf-8"><title>Buttons — secondary & ghost</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.btn { font-family: var(--font-sans); font-weight: 600; font-size: 13px; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 120ms; }
+.btn-secondary { background: var(--bg-3); color: var(--fg-1); border: 1px solid var(--stroke-2); }
+.btn-secondary:hover { background: var(--bg-4); border-color: var(--stroke-3); }
+.btn-ghost { background: transparent; color: var(--fg-2); border: 1px solid transparent; }
+.btn-ghost:hover { background: rgba(255,255,255,0.05); color: var(--fg-1); }
+.btn-danger { background: transparent; color: #e0566c; border: 1px solid rgba(224,86,108,0.4); }
+.btn-danger:hover { background: rgba(224,86,108,0.12); }
+.btn [data-lucide]{ width:14px; height:14px; }
+</style>
+<div class="card">
+  <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <button class="btn btn-secondary"><i data-lucide="save"></i>Save scene</button>
+    <button class="btn btn-secondary" style="background:var(--bg-4);"><i data-lucide="save"></i>Hover</button>
+    <button class="btn btn-ghost">Cancel</button>
+    <button class="btn btn-ghost" style="background:rgba(255,255,255,0.05); color:var(--fg-1);">Hover</button>
+    <button class="btn btn-danger"><i data-lucide="trash-2"></i>Delete</button>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:10px; color:var(--fg-3); letter-spacing:0.05em;">SECONDARY · GHOST · DANGER</div>
+</div></body></html>

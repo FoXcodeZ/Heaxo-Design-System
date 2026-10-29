@@ -1,0 +1,24 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Buttons — primary" subtitle="All states" viewport="700x150" -->
+<html><head><meta charset="utf-8"><title>Buttons — primary</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.btn { font-family: var(--font-sans); font-weight: 600; font-size: 13px; padding: 8px 14px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.005em; transition: all 120ms cubic-bezier(0.22,1,0.36,1); }
+.btn-primary { background: var(--plum-500); color: #fff; box-shadow: 0 1px 0 rgba(0,0,0,0.4); }
+.btn-primary:hover { background: #b54284; }
+.btn-primary.press { background: #8c2961; transform: translateY(1px); }
+.btn-primary.disabled { background: #5a2540; color: rgba(255,255,255,0.4); }
+.btn-primary.focused { box-shadow: 0 0 0 2px rgba(165,50,115,0.45), 0 0 0 4px rgba(165,50,115,0.18); }
+.btn [data-lucide]{ width:14px; height:14px; }
+</style>
+<div class="card">
+  <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+    <button class="btn btn-primary"><i data-lucide="play"></i>Run scene</button>
+    <button class="btn btn-primary" style="background:#b54284;"><i data-lucide="play"></i>Hover</button>
+    <button class="btn btn-primary press"><i data-lucide="play"></i>Pressed</button>
+    <button class="btn btn-primary focused"><i data-lucide="play"></i>Focused</button>
+    <button class="btn btn-primary disabled"><i data-lucide="play"></i>Disabled</button>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:10px; color:var(--fg-3); letter-spacing:0.05em;">PRIMARY · plum-500 · default / hover / press / focus / disabled</div>
+</div></body></html>

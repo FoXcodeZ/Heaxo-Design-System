@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Status chips & badges" subtitle="Pill chips with semantic tints" viewport="700x150" -->
+<html><head><meta charset="utf-8"><title>Status chips & badges</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.chip { display: inline-flex; align-items: center; gap:6px; padding: 3px 9px; border-radius: 999px; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.01em; border: 1px solid; }
+.chip-success { color:#4ec9b0; background: rgba(78,201,176,0.1); border-color: rgba(78,201,176,0.3); }
+.chip-warn { color:#e8b339; background: rgba(232,179,57,0.1); border-color: rgba(232,179,57,0.3); }
+.chip-danger { color:#e0566c; background: rgba(224,86,108,0.1); border-color: rgba(224,86,108,0.3); }
+.chip-info { color:#5aa9ff; background: rgba(90,169,255,0.1); border-color: rgba(90,169,255,0.3); }
+.chip-neutral { color: var(--fg-2); background: var(--bg-3); border-color: var(--stroke-2); }
+.chip [data-lucide]{ width:11px; height:11px; }
+.dot { width:6px; height:6px; border-radius:50%; }
+</style>
+<div class="card">
+  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+    <span class="chip chip-success"><span class="dot" style="background:#4ec9b0"></span>Build passed</span>
+    <span class="chip chip-warn"><i data-lucide="alert-triangle"></i>3 unsaved</span>
+    <span class="chip chip-danger"><i data-lucide="x-circle"></i>Compile failed</span>
+    <span class="chip chip-info"><i data-lucide="info"></i>0.4.2-beta</span>
+    <span class="chip chip-neutral">Mesh</span>
+    <span class="chip chip-neutral">Light</span>
+    <span class="chip chip-neutral">Camera</span>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:10px; color:var(--fg-3); letter-spacing:0.05em;">PILL · 11PX · BG TINT 10% · BORDER TINT 30%</div>
+</div></body></html>

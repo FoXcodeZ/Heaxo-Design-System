@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Icon buttons & toolbar" subtitle="Editor toolbar segments" viewport="700x150" -->
+<html><head><meta charset="utf-8"><title>Icon buttons & toolbar</title>
+<link rel="stylesheet" href="_card.css">
+</head><body><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script>window.addEventListener("load",()=>lucide.createIcons());</script>
+<style>
+.icon-btn { width: 28px; height: 28px; border-radius: 4px; background: transparent; border: 1px solid transparent; color: var(--fg-2); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.icon-btn:hover { background: rgba(255,255,255,0.06); color: var(--fg-1); }
+.icon-btn.active { background: var(--plum-500); color: #fff; }
+.icon-btn [data-lucide]{ width:15px; height:15px; }
+.toolbar { display: inline-flex; background: var(--bg-2); border:1px solid var(--stroke-2); border-radius: 6px; padding: 3px; gap:2px; }
+</style>
+<div class="card">
+  <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+    <div class="toolbar">
+      <button class="icon-btn active"><i data-lucide="mouse-pointer-2"></i></button>
+      <button class="icon-btn"><i data-lucide="move"></i></button>
+      <button class="icon-btn"><i data-lucide="rotate-3d"></i></button>
+      <button class="icon-btn"><i data-lucide="scale"></i></button>
+    </div>
+    <div class="toolbar">
+      <button class="icon-btn"><i data-lucide="grid-3x3"></i></button>
+      <button class="icon-btn active"><i data-lucide="ruler"></i></button>
+      <button class="icon-btn"><i data-lucide="magnet"></i></button>
+    </div>
+    <button class="icon-btn"><i data-lucide="settings"></i></button>
+    <button class="icon-btn"><i data-lucide="more-horizontal"></i></button>
+  </div>
+  <div style="font-family:var(--font-mono); font-size:10px; color:var(--fg-3); letter-spacing:0.05em;">28PX · LUCIDE 15PX · SEGMENTED TOOLBAR · ACTIVE = PLUM</div>
+</div></body></html>
